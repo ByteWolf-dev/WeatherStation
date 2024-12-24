@@ -4,6 +4,7 @@ import { SensorOverviewComponent } from './components/sensor-overview/sensor-ove
 import { SensorDetailedViewComponent } from './components/sensor-detailed-view/sensor-detailed-view.component';
 
 const routes: Routes = [
+  { path: '', component: SensorOverviewComponent },
   { path: 'sensor-overview', component: SensorOverviewComponent },
   { path: 'sensor/:id', component: SensorDetailedViewComponent }
 ];
