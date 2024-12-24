@@ -1,0 +1,28 @@
+/* Optional: Adds some margin around the table for better spacing */
+table {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+
+
+  .charts-container {
+    display: flex;
+    justify-content: space-between;  /* Distribute the space evenly between the charts */
+    gap: 20px;                      /* Add some space between the charts */
+    margin-bottom: 20px;            /* Space below the charts */
+  }
+  
+  canvas {
+    max-width: 100%;                 /* Ensure charts scale down if container width is smaller */
+    height: auto;                    /* Maintain aspect ratio */
+  }
+  

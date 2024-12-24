@@ -1,0 +1,39 @@
+<div *ngIf="measurements.length > 0; else noMeasurements">
+  <h3>Measurements for Sensor ID: {{ sensorId }}</h3>
+
+  <!-- Temperature chart -->
+  <canvas id="temperatureChart" width="400" height="200"></canvas>
+  
+  <!-- Pressure chart -->
+  <canvas id="pressureChart" width="400" height="200"></canvas>
+
+  <!-- Humidity chart -->
+  <canvas id="humidityChart" width="400" height="200"></canvas>
+
+  <!-- Table for displaying measurements -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Timestamp</th>
+        <th scope="col">Temperature (°C)</th>
+        <th scope="col">Humidity (%)</th>
+        <th scope="col">Pressure (hPa)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let measurement of measurements">
+        <td>{{ measurement.timestamp }}</td>
+        <td>{{ measurement.temperature }}</td>
+        <td>{{ measurement.humidity }}</td>
+        <td>{{ measurement.pressure }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noMeasurements>
+  <p>No measurements found for this sensor.</p>
+</ng-template>
+
+<!-- Back button to navigate to the overview page -->
+<button class="btn btn-secondary" routerLink="/sensor-overview">Back to Overview</button>
