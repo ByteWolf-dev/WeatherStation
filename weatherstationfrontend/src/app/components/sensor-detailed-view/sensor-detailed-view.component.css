@@ -12,17 +12,23 @@ table {
   button {
     margin-top: 20px;
   }
-
-
-  .charts-container {
-    display: flex;
-    justify-content: space-between;  /* Distribute the space evenly between the charts */
-    gap: 20px;                      /* Add some space between the charts */
-    margin-bottom: 20px;            /* Space below the charts */
-  }
   
+  .chart-container {
+    display: flex;                  /* Use flexbox for layout */
+    flex-wrap: wrap;                /* Allow wrapping to the next row if necessary */
+    justify-content: center;        /* Center items horizontally */
+    align-items: center;            /* Center items vertically */
+    gap: 20px;                      /* Add space between canvases */
+    max-width: 100%;                /* Ensure it adapts to the screen width */
+    max-height: 50vh;               /* Limit height to half of the viewport height */
+    padding: 10px;                  /* Optional padding */
+    box-sizing: border-box;         /* Include padding in width/height */
+    overflow-y: auto;               /* Allow scrolling if content exceeds the container */
+  }
+
   canvas {
-    max-width: 100%;                 /* Ensure charts scale down if container width is smaller */
-    height: auto;                    /* Maintain aspect ratio */
+    max-width: calc(33.33% - 20px); /* Make canvases fit within the container */
+    flex: 1 1 calc(33.33% - 20px);  /* Responsive behavior for flexible layout */
+    height: auto;                   /* Maintain aspect ratio */
   }
   

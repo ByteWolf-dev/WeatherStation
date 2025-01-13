@@ -1,14 +1,16 @@
 <div *ngIf="measurements.length > 0; else noMeasurements">
   <h3>Measurements for Sensor ID: {{ sensorId }}</h3>
 
-  <!-- Temperature chart -->
-  <canvas id="temperatureChart" width="400" height="200"></canvas>
+  <div class="chart-container">
+    <!-- Temperature chart -->
+    <canvas id="temperatureChart" width="400"></canvas>
+    
+    <!-- Pressure chart -->
+    <canvas id="pressureChart" width="400"></canvas>
   
-  <!-- Pressure chart -->
-  <canvas id="pressureChart" width="400" height="200"></canvas>
-
-  <!-- Humidity chart -->
-  <canvas id="humidityChart" width="400" height="200"></canvas>
+    <!-- Humidity chart -->
+    <canvas id="humidityChart" width="400"></canvas>
+  </div>
 
   <!-- Table for displaying measurements -->
   <table class="table table-striped">
