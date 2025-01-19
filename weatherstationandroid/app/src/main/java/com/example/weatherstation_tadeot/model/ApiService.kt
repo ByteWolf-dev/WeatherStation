@@ -8,7 +8,7 @@ interface ApiService {
     suspend fun getLocations(): List<LocationDto>
 
     @GET("sensors")
-    suspend fun getSensors(): ArrayList<SensorDto>
+    suspend fun getSensors(): List<SensorDto>
 
     @GET("measurements")
     suspend fun getMeasurements(): List<MeasurementDto>
@@ -22,6 +22,6 @@ interface ApiService {
     @GET("measurements/{id}")
     suspend fun getMeasurementById(@Path("id") id: Long): MeasurementDto
 
-    @GET("measurements/{sensorId}")
+    @GET("measurements/sensor/{sensorId}")
     suspend fun getMeasurementBySensorId(@Path("sensorId") sensorId: Long): List<MeasurementDto>
 }

@@ -1,11 +1,9 @@
 package com.example.weatherstation_tadeot.model
 
-import java.time.LocalDateTime
-
 data class SensorDto(
     val id: Long,
     val type: String,
     val model: String?,
-    val installationDate: LocalDateTime?,
+    val installationDate: String?,
     val status: Boolean
 )

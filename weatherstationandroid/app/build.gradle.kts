@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -62,12 +63,12 @@ dependencies {
 
     // Moshi for JSON parsing
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation ("com.squareup.moshi:moshi-kotlin:1.12.0")
-    implementation ("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
     implementation("com.jakewharton.threetenabp:threetenabp:1.3.1")
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.google.code.gson:gson:2.8.8")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.google.code.gson:gson:2.8.8")
 
     // OkHttp for advanced networking
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
@@ -84,4 +85,8 @@ dependencies {
 
     // RecyclerView (if using XML layouts)
     implementation("androidx.recyclerview:recyclerview:1.3.1")
+
+    // Chart for displaying data
+//    implementation("com.github.tehras:compose-charts:1.0.3")
+
 }

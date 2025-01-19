@@ -1,13 +1,6 @@
 package com.example.weatherstation_tadeot.model
 
 import com.google.gson.GsonBuilder
-import com.squareup.moshi.FromJson
-import com.squareup.moshi.JsonReader
-import com.squareup.moshi.JsonWriter
-import com.squareup.moshi.ToJson
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.format.DateTimeFormatter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -41,26 +34,4 @@ object RetrofitClient {
         retrofit.create(ApiService::class.java)
     }
 
-}
-
-class LocalDateTimeAdapter {
-    private val formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
-
-    @FromJson
-    fun fromJson(reader: JsonReader): LocalDateTime? {
-        return if (reader.peek() != JsonReader.Token.NULL) {
-            LocalDateTime.parse(reader.nextString(), formatter)
-        } else {
-            reader.nextNull<LocalDateTime>()
-        }
-    }
-
-    @ToJson
-    fun toJson(writer: JsonWriter, value: LocalDateTime?) {
-        if (value != null) {
-            writer.value(value.format(formatter))
-        } else {
-            writer.nullValue()
-        }
-    }
 }
