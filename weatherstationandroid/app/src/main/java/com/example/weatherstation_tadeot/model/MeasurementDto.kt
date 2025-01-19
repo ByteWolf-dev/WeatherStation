@@ -1,4 +1,4 @@
-package com.example.weatherstation_tadeot.dtos
+package com.example.weatherstation_tadeot.model
 
 import java.time.LocalDateTime
 

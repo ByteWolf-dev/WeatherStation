@@ -3,45 +3,40 @@ package com.example.weatherstation_tadeot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.weatherstation_tadeot.model.SensorDto
+import com.example.weatherstation_tadeot.ui.layout.SensorDataView
+import com.example.weatherstation_tadeot.ui.layout.SensorSelectionView
 import com.example.weatherstation_tadeot.ui.theme.WeatherStation_TadeotTheme
+import com.example.weatherstation_tadeot.ui.layout.SensorViewModel
+import com.jakewharton.threetenabp.AndroidThreeTen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        AndroidThreeTen.init(this)
         setContent {
             WeatherStation_TadeotTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MainScreen()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun MainScreen() {
+    val selectedSensor = remember { mutableStateOf<SensorDto?>(null) }
+    val viewModel: SensorViewModel = viewModel()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    WeatherStation_TadeotTheme {
-        Greeting("Android")
+    if (selectedSensor.value == null) {
+        SensorSelectionView { sensor ->
+            selectedSensor.value = sensor
+            viewModel.selectSensor(sensor)
+        }
+    } else {
+        SensorDataView(sensor = selectedSensor.value!!, viewModel = viewModel)
     }
 }

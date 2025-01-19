@@ -1,4 +1,4 @@
-package com.example.weatherstation_tadeot.dtos
+package com.example.weatherstation_tadeot.model
 
 data class LocationDto(
     val id: Long,
