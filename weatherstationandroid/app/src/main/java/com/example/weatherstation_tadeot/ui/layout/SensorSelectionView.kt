@@ -32,13 +32,19 @@ fun SensorSelectionView(onSensorSelected: (SensorDto) -> Unit) {
     LaunchedEffect(Unit) {
         viewModel.fetchSensors()
     }
-// Horizontal layout for the cards
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
+        Text(
+            text = "Sensors",
+            style = MaterialTheme.typography.headlineLarge,
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+
         sensors.value.forEach { sensor ->
             SensorCard(sensor = sensor, onClick = { onSensorSelected(sensor) })
         }
@@ -63,14 +69,14 @@ fun SensorCard(sensor: SensorDto, onClick: () -> Unit) {
             // Sensor model or type
             Text(
                 text = sensor.model ?: sensor.type,
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Sensor ID
             Text(
-                text = "ID: ${sensor.id}",
-                style = MaterialTheme.typography.bodySmall
+                text = "Sensor type: ${sensor.type}",
+                style = MaterialTheme.typography.bodyMedium
             )
 
             // Button to view details
