@@ -42,7 +42,7 @@ fun SensorDataView(
     ) {
         // Title
         Text(
-            text = "Measurements for Sensor: ${sensor.model}",
+            text = "Measurements for Sensor: ${sensor.model?: sensor.type}",
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(bottom = 16.dp)
         )
