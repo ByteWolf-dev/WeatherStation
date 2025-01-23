@@ -19,6 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.weatherstation_tadeot.model.MeasurementDto
 import com.example.weatherstation_tadeot.model.SensorDto
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.format.DateTimeFormatter
 
 @Composable
 fun SensorDataView(
@@ -40,7 +42,7 @@ fun SensorDataView(
     ) {
         // Title
         Text(
-            text = "Measurements for Sensor ID: ${sensor.id}",
+            text = "Measurements for Sensor: ${sensor.model?: sensor.type}",
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(bottom = 16.dp)
         )
@@ -139,11 +141,18 @@ fun TableComponent(measurements: List<MeasurementDto>) {
                     .padding(vertical = 4.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = measurement.timestamp, modifier = Modifier.weight(1f))
+                Text(text = formatTimestamp(measurement.timestamp), modifier = Modifier.weight(1f))
                 Text(text = measurement.temperature.toString(), modifier = Modifier.weight(1f))
                 Text(text = measurement.humidity.toString(), modifier = Modifier.weight(1f))
                 Text(text = measurement.pressure.toString(), modifier = Modifier.weight(1f))
             }
         }
     }
+}
+
+fun formatTimestamp(timestamp: String): String {
+    val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+    val outputFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy, HH:mm")
+    val dateTime = LocalDateTime.parse(timestamp, inputFormatter)
+    return dateTime.format(outputFormatter)
 }

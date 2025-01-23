@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.weatherstation_tadeot.client.RetrofitClient
 import com.example.weatherstation_tadeot.model.MeasurementDto
-import com.example.weatherstation_tadeot.model.RetrofitClient
 import com.example.weatherstation_tadeot.model.SensorDto
 import kotlinx.coroutines.launch
 import java.util.logging.Logger

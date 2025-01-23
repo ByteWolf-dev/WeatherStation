@@ -3,6 +3,7 @@ E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\boun
 E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\boundary\SensorResource.java
 E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\control\LocationRepository.java
 E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\control\MeasurementRepository.java
+E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\control\MeasurementSocket.java
 E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\control\SensorRepository.java
 E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\model\Location.java
 E:\HTL\5.Jahr\WMC\WeatherStation\weatherstationbackend\src\main\java\at\htl\model\Measurement.java
