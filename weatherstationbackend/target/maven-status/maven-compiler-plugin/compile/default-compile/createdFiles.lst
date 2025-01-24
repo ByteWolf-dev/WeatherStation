@@ -1,0 +1,9 @@
+at\htl\control\SensorRepository.class
+at\htl\model\Sensor.class
+at\htl\boundary\MeasurementResource.class
+at\htl\model\Measurement.class
+at\htl\control\LocationRepository.class
+at\htl\boundary\SensorResource.class
+at\htl\boundary\LocationResource.class
+at\htl\control\MeasurementRepository.class
+at\htl\model\Location.class

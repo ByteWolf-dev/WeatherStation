@@ -32,3 +32,8 @@ INSERT INTO measurement (id, sensor_id, timestamp, temperature, humidity, pressu
 INSERT INTO location (id, sensor_id, name, description) VALUES (1, 1, 'Room A', 'Temperature sensor in Room A');
 INSERT INTO location (id, sensor_id, name, description) VALUES (2, 2, 'Room B', 'Humidity sensor in Room B');
 INSERT INTO location (id, sensor_id, name, description) VALUES (3, 3, 'Room C', 'Pressure sensor in Room C');
+
+select * from dual;
+
+
+commit;

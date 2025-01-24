@@ -84,3 +84,6 @@ Generating Jakarta REST resources with Panache
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+
+docker run --rm -p 8080:8080 htl-leonding/weatherstation-backend 

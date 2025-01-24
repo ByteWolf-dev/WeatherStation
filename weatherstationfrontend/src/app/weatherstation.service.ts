@@ -7,7 +7,8 @@ import { Measurement, Sensor } from './models';
   providedIn: 'root'
 })
 export class WeatherStationService {
-  private baseUrl = "http://localhost:8080/";
+  // private baseUrl = "http://10.214.4.11:8080/";
+  private baseUrl = "http://10.214.64.209:8080/";
 
   constructor(private http: HttpClient) { }
 
