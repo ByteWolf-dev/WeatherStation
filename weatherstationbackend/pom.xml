@@ -64,11 +64,15 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
+<<<<<<< HEAD
             <artifactId>quarkus-container-image-docker</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-container-image-jib</artifactId>
+=======
+            <artifactId>quarkus-websockets</artifactId>
+>>>>>>> 4c3e531d2f8360c3aaa767773834180d0acce72f
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
